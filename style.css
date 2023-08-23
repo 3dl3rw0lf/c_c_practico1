@@ -78,6 +78,7 @@ h2 {
 }
 
 div img {
-	width: 70%;
 	border-radius: 4rem;
+	display: block;
+	width: 100%;
 }
