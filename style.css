@@ -34,7 +34,7 @@ h2 {
   float: left;
 }
 
-&:first-child {
+.card:first-child {
 	margin-top: 20px;
 	@media (max-width: 768px) {
     	margin: 10px 20px;
@@ -42,7 +42,7 @@ h2 {
 	  }
 }
 
-&:nth-child(2) {
+.card:nth-child(2) {
 	margin: 20px 0px;
 	width: 33.3333%;
 	padding: 50px 20px;
@@ -59,14 +59,7 @@ h2 {
 }
 
 .icon {
-  margin: 50px 0;
-  svg {
-    width: 100px;
-    height: 100px;
-    path {
-      fill: var(--color-four);
-    }
-  }
+  margin: 7%;
 }
 
 .features ul {
@@ -82,4 +75,9 @@ h2 {
 
 .features li span {
 	border-bottom: 2px dotted var(--color-four);
+}
+
+div img {
+	width: 70%;
+	border-radius: 4rem;
 }
