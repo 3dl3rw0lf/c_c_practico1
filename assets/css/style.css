@@ -22,6 +22,7 @@ body {
 
 h1 {
     color: var(--color-three);
+    font-size: 2.1rem;
     padding: 10px;
     text-align: center;
 }
