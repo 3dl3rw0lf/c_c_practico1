@@ -90,6 +90,7 @@ hr {
 
 .features {
     text-align: center;
+    color: var(--color-four);
 }
 .features ul {
 	padding: 0;
