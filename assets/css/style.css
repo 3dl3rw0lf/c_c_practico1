@@ -18,22 +18,22 @@
     border: solid var(--color-two);
 }
 
-.card:hover {
+.card-pilots:hover {
     border: solid var(--color-four);
 }
 
-.card>img {
+.card-pilots img {
     box-shadow: 2px 2px 5px var(--color-two);
     transform: rotate(-27deg);
     transition: all 0.3s;
 }
 
 
-.card:hover img {
+.card-pilots:hover img {
     transform: rotate(0);
 }
 
-.card img:hover {
+.card-pilots img:hover {
     box-shadow: 2px 2px 5px var(--color-four);
 }
 
