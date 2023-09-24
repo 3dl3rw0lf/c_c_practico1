@@ -101,6 +101,17 @@
         </section>
         <section class="m-5" id="#contact">
             <form class="form">
+                <div class="input-group">
+                    <div class="col-3 form-floating has-validation mb-3">
+                        <input type="text" class="form-control" id="name" placeholder="Ingrese su nombre" name="name">
+                        <label for="name" class="form-label">Nombre:</label>
+                    </div>
+                    <div class="col-3 form-floating has-validation mb-3">
+                        <input type="lastname" class="form-control" id="lastname" placeholder="Ingrese su apellido"
+                            name="lastname">
+                        <label for="lastname" class="form-label">Apellido:</label>
+                    </div>
+                </div>
                 <div class="form-floating mb-3 has-validation">
                     <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
                     <label for="email" class="form-label">Email:</label>
@@ -112,9 +123,9 @@
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                     <label class="form-check-label" for="flexCheckDefault">
-                      Suscribirse a las novedades
+                        Suscribirse a las novedades
                     </label>
-                  </div>
+                </div>
                 <div class="d-grid gap-2 col-6 mx-auto">
                     <button type="submit" class="btn btn-primary mb-3">Submit</button>
                 </div>
@@ -124,8 +135,9 @@
     <footer class="footer mt-auto py-3 bg-body-tertiary fixed-bottom">
         <div class="container">
             <div class="row text-body-secondary">
-                <div class="col text-center">
-                    <a class="text-decoration-none" href="https://github.com/3dl3rw0lf" rel="noopener noreferrer" target="_blank">
+                <div class="col mx-auto text-center">
+                    <a class="text-decoration-none" href="https://github.com/3dl3rw0lf" rel="noopener noreferrer"
+                        target="_blank">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-github" viewBox="0 0 16 16">
                             <path
@@ -133,11 +145,17 @@
                         </svg>
                     </a>
                 </div>
-                <div class="col text-center">
-                    Place sticky footer content here.
+                <div class="col mx-auto text-center">
+                    <a class="col mx-auto text-center text-decoration-none" href="#">FAQ</a>
                 </div>
-                <div class="col text-center">
-                    <a href="./pages/dev.html">
+                <div class="col mx-auto text-center">
+                    <a class="text-decoration-none" href="#contact">Contáctanos</a>
+                </div>
+                <div class="col mx-auto text-center">
+                    <a class="text-decoration-none" href="#">Privacidad</a>
+                </div>
+                <div class="col mx-auto text-center">
+                    <a class="text-decoration-none" href="./pages/dev.html">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                             class="bi bi-yin-yang" viewBox="0 0 16 16">
                             <path d="M9.167 4.5a1.167 1.167 0 1 1-2.334 0 1.167 1.167 0 0 1 2.334 0Z" />
@@ -155,4 +173,5 @@
     <script src="assets\node_modules\bootstrap\dist\js\bootstrap.min.js"></script>
     <script src="assets\node_modules\@popperjs\core\lib\popper.js"></script>
 </body>
+
 </html>
