@@ -107,7 +107,13 @@ hr {
 }
 
 .esp {
-    background-image: url(../img/flags/Bandera_de_España.svg.png.svg);
+    background-image: url(../img/flags/Bandera_de_España.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bel {
+    background-image: url(../img/flags/Flag_of_Belgium.svg);
     background-position: center;
     background-repeat: no-repeat;
 }
