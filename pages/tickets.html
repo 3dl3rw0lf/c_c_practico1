@@ -58,21 +58,24 @@
     <main class="m-5">
         <section class="m-5" id="#ticket">
             <h2 class="h2 text-center mt-5">Compra de tickets</h2>
-            <form id="formBuy" class="form">
+            <form id="formBuy" class="form mb-5">
                 <div class="input-group">
                     <div class="col-3 form-floating has-validation mb-3">
                         <input type="text" class="form-control" id="name" placeholder="Ingrese su nombre" name="name" required>
                         <label for="name" class="form-label">Nombre:</label>
+                        <p class="text-danger" id="alertN"></p>
                     </div>
                     <div class="col-3 form-floating has-validation mb-3">
                         <input type="text" class="form-control" id="lastname" placeholder="Ingrese su apellido"
                             name="lastname" required>
                         <label for="lastname" class="form-label">Apellido:</label>
+                        <p class="text-danger" id="alertL"></p>
                     </div>
                 </div>
                 <div class="form-floating mb-3 has-validation">
                     <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
                     <label for="email" class="form-label">Email:</label>
+                    <p class="text-danger" id="alertM"></p>
                 </div>
                 <div class="input-group mb-3">
                     <div class="col-3 form-floating has-validation mb-3">
@@ -82,20 +85,20 @@
                     <div class="col-3 form-floating has-validation mb-3">
                         <select class="form-select" id="typeViewer" required>
                             <option class="form-label" value="">Elija una opción...</option>
-                            <option value="0.21">Ocasional</option>
-                            <option value="0.50">Fan</option>
-                            <option value="0.80">Suscriptor</option>
+                            <option value="ocasional">Ocasional</option>
+                            <option value="fan">Fan</option>
+                            <option value="suscriptor">Suscriptor</option>
                           </select>
                         
                     </div>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text">$</span>
-                    <input type="text" class="form-control" id="username" placeholder="Valor">
+                    <input type="text" class="form-control" id="total" placeholder="Valor" disabled>
                   </div>
                 <div class="d-grid gap-2 d-flex justify-content-center">
-                    <button id="reset" class="btn btn-primary col-6  mx-2" type="reset">Limpiar Formulario</button>
-                    <button id="buy" class="btn btn-primary col-6  mx-2" type="submit">Comprar Tickets</button>
+                    <button id="reset" class="btn btn-primary col-6  mx-2" type="">Limpiar Formulario</button>
+                    <button id="buy" class="btn btn-primary col-6  mx-2" type="">Comprar Tickets</button>
                 </div>
             </form>
         </section>

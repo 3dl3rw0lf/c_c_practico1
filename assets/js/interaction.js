@@ -1,59 +1,74 @@
 let btnBuy = document.querySelector("#buy");
 
-btnBuy.addEventListener("click", function calcular(){
-
+btnBuy.addEventListener("click", function calcular(event) {
+  event.preventDefault();
   let nombre = document.getElementById("name").value;
   console.log(`${nombre}`);
-  let typeName = "nombre";
   let apellido = document.getElementById("lastname").value;
   console.log(`${apellido}`);
-  let typeLastName = "apellido";
   let email = document.getElementById("email").value;
   console.log(`${email}`);
 
+  const nomApeRegex = /^[a-zA-Z\s]+$/; // Expresión regular para nombre y apellido
+  const emailRegex =
+    /^(?:[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}|[^\s@]+@(gmail\.com|yahoo\.com|yahoo\.com\.ar|outlook\.com|hotmail\.com))$/i;
+  // Expresión regular para correo electrónico
 
-  let quantity = document.getElementById("quantity").value;
-  let choose = document.getElementById("typeViewer").value;
 
-  if(nombre !== ""){
-    validateName(nombre, typeName);
+   // Función para mostrar avisos
+   const showAlert = (elementId, mensaje) => {
+    const element = document.getElementById(elementId);
+    element.innerHTML = mensaje;
+    return !mensaje;
+  };
+
+  // Validación de campos
+  let isValidName = showAlert('alertN', !nombre || !nomApeRegex.test(nombre) ? 'Debe ingresar un nombre válido' : '');
+  let isValidLastname = showAlert('alertL', !apellido || !nomApeRegex.test(apellido) ? 'Debe ingresar un apellido válido' : '');
+  let isValidEmail = showAlert('alertM', !email || !emailRegex.test(email) ? 'Debe ingresar un correo electrónico válido' : '');
+
+  console.log(`${isValidName}, ${isValidEmail}, ${isValidLastname}`);
+
+  // Si todas las validaciones pasan, realiza el cálculo
+  if (isValidName && isValidName && isValidEmail) {
+    console.log(`entra`)
+    let choose = document.getElementById("typeViewer").value;
+    let quantity = parseFloat(document.getElementById("quantity").value);
+    
+    console.log(`QC: ${quantity}, ${choose}`);
+
+    let discount = 0;
+    const price = 200;
+    let result = 0
+
+    switch (choose) {
+      case "suscriptor":
+        discount = 0.8;
+        break;
+      case "fan":
+        discount = 0.5;
+        break;
+      case "ocasional":
+        discount = 0.15;
+        break;
+    }
+
+    document.getElementById("name").value = "";
+    document.getElementById("lastname").value = "";
+    document.getElementById("email").value = ""; 
+
+    result = (price - (price * discount)) * quantity;
+    console.log(`Resultado : ${result}`);
+    document.getElementById('total').value = result;
   }
-  if(apellido !== ""){
-    validateName(apellido, typeLastName);
-  }
-  if(email !== ""){
-    validateMail(email);
-  }
+  
   console.log(`NAE:${nombre}, ${apellido}, ${email} `);
 
-  console.log(`QC: ${quantity}, ${choose.toString()}`);
-
-  function validateName(name, type){
-    let expresionRegular = /^[A-Za-z]+$/
-    if(expresionRegular.test(name)){
-          return;
-    }
-    return alert(`Ingrese un ${type} válido`);
-  }
-  
-  function validateMail(correo) {
-      // Expresión regular para validar el formato del correo electrónico
-      let expresionRegularM = /^[^\s@]+@(gmail\.com|yahoo\.com|yahoo\.com.ar|outlook\.com|hotmail\.com)$/i;
-      if(expresionRegularM.test(correo)){
-        return;
-      }
-       return alert(`Ingrese un email valido`);
-  }
 });
 
-  
-
-  
 let btnReset = document.querySelector("#reset");
 
-btnReset.addEventListener("click",reseteo);
-
-function reseteo() {
-    console.log(`work`);
-    document.querySelector("form").reset();
-}
+btnReset.addEventListener("click", function reseteo() {
+  console.log(`work`);
+  document.querySelector("form").reset();
+});
