@@ -1,6 +1,6 @@
-let btnBuy = document.querySelector("#buy");
+let buy = document.querySelector("#buy");
 
-btnBuy.addEventListener("click", function calcular(event) {
+buy.addEventListener("click", function calcular(event) {
   event.preventDefault();
   let nombre = document.getElementById("name").value;
   console.log(`${nombre}`);
